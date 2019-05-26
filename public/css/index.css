@@ -1,3 +1,22 @@
+/* 轮播图 */
+.kv-swiper{
+	width:100%;
+	height: 500px;
+	position:relative;
+}
+.kv-swiper:before{
+	content: "";
+	display:block;
+	padding-top: 10.9%;
+	background: url(../img/kv-cover.png) no-repeat;
+	background-size: 100% auto;
+	background-position: center bottom;
+	position: absolute;
+	left:0;
+	bottom:-1px;
+	right:0;
+	z-index:2;
+}
 /*		主体部分*/
 	 .main-top{
 		width:1200px;

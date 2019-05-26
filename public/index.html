@@ -3,8 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="css/swiper.min.css">
 	<link rel="stylesheet" href="css/com.css">
 	<link rel="stylesheet" href="css/index.css">
+	
 	<style>
 		
 	</style>
@@ -26,6 +28,21 @@
 				<li><a href="videos.html">精彩视频<span class='list-name'>VIDEOS</span></a></li>
 		</ul>
 	</nav>
+	<!-- 轮播图 -->
+	
+	<div class="kv-swiper  swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide swiper-slide-active">
+				123
+			</div>	
+			<div class="swiper-slide">
+				456
+			</div>	
+			<div class="swiper-slide">
+				789
+			</div>	
+		</div>
+	</div>
 <!-- 主体部分 -->
 	<section>
 		<div class='main-top clearfix'>
@@ -144,5 +161,14 @@
 			</li>
 		</ul>
 	</div>
+	<script src="js/swiper.min.js"></script>
+	<script>
+		window.onload = function() {
+	 var mySwiper = new Swiper ('.swiper-container', {
+		autoplay:{delay: 1000}, 
+    loop: true, // 循环模式选项
+	 });
+		}
+	</script>
 </body>
 </html>
