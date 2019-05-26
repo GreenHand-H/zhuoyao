@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/com.css">
+	<link rel="stylesheet" href="css/news.css">
+</head>
+<body>
+	<!-- 导航栏  -->
+	<nav>
+		<div class='nav-logo'>
+			<a href="#" class='login-hide'></a>
+		</div>
+		<ul class='nav-list'>
+		
+				<li><a href="index.html">官方首页<span class='list-name'>HOME</span></a></li>
+				<li><a href="news.html">新闻资讯<span class='list-name'>NEWS</span></a></li>
+				<li><a href="sprite.html">妖灵图鉴<span class='list-name'>SPRITE</span></a></li>
+				<li><a href="activity.html">活动中心<span class='list-name'>ACTIVITY</span></a></li>
+				<li><a href="strategy.html">攻略中心<span class='list-name'>STRATEGY</span></a></li>
+				<li><a href="videos.html">精彩视频<span class='list-name'>VIDEOS</span></a></li>
+		
+		</ul>
+	</nav>
+<!-- 图片背景 -->
+	<div class="inner-kv">
+		
+	</div>
+	<!-- 新闻资讯 -->
+	<div	class='inner-top clearfix'>
+		<h2 class='inner-title tit-strategy d-spr text-hide'>新闻资讯</h2>
+	</div>
+		<div class="inner-con inner-news-list inner-strategy-list">
+			<div class="tab-c comm-tab">
+				<a href=""class='tab-prev prev spr text-hide'>上一个</a>
+				<ul class='tab-hd'>
+					<li class='tab-item on'><a href="javascript:strategy_search('官方指引')" class='d-spr text-hide f-1-4 t-gfzy'>官方指引</a></li>
+					<li class='tab-item'><a href="javascript:strategy_search('新手指南')"  class='d-spr text-hide f-1-4 t-xszy'>新手指南</a></li>
+					<li class='tab-item'><a href="javascript:strategy_search('活动玩法')"  class='d-spr text-hide f-1-4 t-hdwf'>活动玩法</a></li>
+					<li class='tab-item'><a href="javascript:strategy_search('御灵攻略')"  class='d-spr text-hide f-1-4 t-spgl'>视频攻略</a></li>
+				</ul>
+				<a href="" class='tab-next next spr text-hide'>下一个</a>
+			</div>
+			<div class="grid-tab-bd">
+				<div class="tab-panel" id='strategy-item'>
+					
+				</div>
+			</div>
+		</div>
+<!--底部内容  -->
+	<div class="foot-wrap">
+		<h3 class='foot-tit spr text-hide'>更多精彩请关注我们</h3>
+		<ul class='contact-list'>
+			<li class='contact-bbs'>
+			<a href=""><span class='spr text-hide'>官方论坛</span></a>
+			</li>
+			<li class='contact-buluo'>
+			<a href=""><span class='spr text-hide'>官方论坛</span></a>
+			</li>
+			<li class='contact-wxyxq'>
+			<img src="img/yxqqr.jpg" alt=""><span class='spr text-hide'>官方论坛</span>
+			</li>
+			<li class='contact-wx'>
+			<img src="img/wxqr.jpg" alt=""><span class='spr text-hide'>官方论坛</span>
+			</li>
+		</ul>
+	</div>
+	<script>
+		function strategy_search(data){
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						var result=xhr.responseText;
+						console.log(result);
+					var obj=JSON.parse(result);
+
+					var col_news=document.getElementById('strategy-item');
+					console.log(col_news);
+					var strategy_html='<ul class="col-news">';
+					for(var key in obj){
+						obj[key].state_date=obj[key].state_date.slice(0,10);
+						console.log(obj[key].state_date);
+						strategy_html+=`<li>
+							<span class=\'time\'>${obj[key].state_date}</span>
+							<a href=\"#\">「${data}」${obj[key].state_cont}</a>
+						</li>`;
+					}
+					strategy_html+='</ul>'
+					
+					col_news.innerHTML=strategy_html;
+				}
+			}
+			var formdata='state_sort='+data;
+			xhr.open('get','/strategy/all?'+formdata,true);
+			xhr.send();
+		}
+	
+	</script>
+</body>
+</html>
