@@ -182,3 +182,24 @@ a{
 .contact-buluo span.spr{
 	background-position:-150px -1060px;
 }
+/*最后部分*/
+.foot-list{
+	width:1200px;
+	margin:140px auto 0;
+	color:#525561;
+}
+.list-cont{
+	display: inline-block;
+	margin:48px auto 0;
+	width:100%;
+	text-align: center;
+}
+.list-item a{
+	line-height: 20px;
+	font-size: 12px;
+	color: #525561;
+}
+.foot-h{
+	font-size: 12px;
+	text-align: center;
+}
