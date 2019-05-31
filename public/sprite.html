@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="css/com.css">
+	<link rel="stylesheet" href="css/sprite.css">
+	<link rel="stylesheet" href="css/swiper.min.css">
 </head>
 <body>
 <!-- 导航栏  -->
@@ -26,8 +28,58 @@
 	<div class="inner-kv">
 		
 	</div>
-	<div	class='inner-top clearfix'>
-		<h2 class='inner-title tit-sprite d-spr text-hide'>新闻资讯</h2>
+	<div class='inner-top clearfix'>
+		<h2 class='inner-title d-spr text-hide'>新闻资讯</h2>
+		<div class="clearfix">
+			<a href="#" class="sprite-prev spr text-hide">上一个</a>
+			<div class="sprite-tab-swiper swiper-container">
+				<ul class="swiper-wrapper">
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="on">全部</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">上古三门</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">最初的伙伴</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">四海志</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">四海志传奇</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">古怪集</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">古怪集传奇</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">青丘录</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">神武道</a>
+					</li>
+					<li class="swiper-slide  swiper-slide-visible swiper-slide-active">
+						<a href="#" class="">英雄会</a>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="sprite-next spr text-hide">上一个</a>
+		</div>
+		<div class="grid-tab-hd">
+			<ul class="sprite-list clearfix">
+				<li class="t-sgsm">
+					<a href="#" class="d-spr sprite-img">
+						<img src="img/pet/sn-sm.png" alt="">
+					</a>
+					<p>狻猊</p>
+				</li>
+			</ul>
+		</div>
+
+		
 	</div>
 	
 	<!--底部内容  -->
@@ -83,4 +135,10 @@
 		</div>
 	</div>
 </body>
+<script src="js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.sprite-tab-swiper', {
+     
+    });
+	</script>
 </html>
