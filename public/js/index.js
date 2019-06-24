@@ -48,3 +48,12 @@ $(".adBtn a").click(function(){
         }
     })
 })
+$(".strategy-pagination .swiper-pagination-switch").click(function(){
+    $(this).addClass("swiper-active-switch").siblings().removeClass("swiper-active-switch");
+    $(this).parent().children().each((i,elem)=>{
+        if(this==elem){
+            $(this).parent().prev().css("left",-i*456+'px');
+        }
+    })
+    
+})

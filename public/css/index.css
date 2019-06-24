@@ -1,12 +1,19 @@
 /* 轮播图 */
-
-.kv-swiper {
+.kv-wrap{
     width: 100%;
     height: 960px;
     position: relative;
 }
+.kv-swiper {
+    position: relative;
+    width: 1920px;
+    height: 960px;
+    top: 0;
+    left: 50%;
+    margin-left: -960px;
+}
 
-.kv-swiper:before {
+.kv-wrap:before {
     content: "";
     display: block;
     padding-top: 10.9%;
@@ -19,7 +26,6 @@
     right: 0;
     z-index: 2;
 }
-
 
 /*		主体部分*/
 
@@ -72,10 +78,10 @@ section {
     border-left: 4px solid #78b5fb;
     color: #78b5fb;
 }
-.col-news{
+.grid-tab-bd .col-news{
     display: none;
 }
-.col-news.dis{
+.grid-tab-bd .col-news.dis{
     display: block;
 }
 .col-news>li {
@@ -960,8 +966,58 @@ section {
     position: relative;
     margin: 42px auto 0px;
     border-radius: 20px;
+    overflow: hidden;
 }
-
+.swiper-all{
+  width: 1368px;
+  position: absolute;
+  transition: all 0.5s linear;
+}
+.swiper-item{
+    float: left;
+    width: 456px;
+    height: 222px;
+    position: relative;
+}
+.swiper-item img{
+    width: 100%;
+    height: 100%;
+}
+.swiper-item p{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #666;
+    background: rgba(4, 0, 0, .46);
+    padding-left: 20px;
+    padding-right: 160px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.strategy-pagination{
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    height: 40px;
+}
+.strategy-pagination .swiper-pagination-switch {
+    float: left;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: url(../img/spr.png) no-repeat;
+    background-position: -390px -100px;
+    cursor: pointer;
+}
+.strategy-pagination .swiper-active-switch {
+    background-position: -350px -100px;
+}
 .strategy-con {
     margin-left: 130px;
     height: 100%;
@@ -1025,7 +1081,7 @@ section {
 }
 
 .part5 {
-    background-image: url(img/bg-5.jpg);
+    background-image: url(../img/bg-5.jpg);
     height: 981px;
     position: relative;
 }
