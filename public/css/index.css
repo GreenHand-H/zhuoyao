@@ -68,10 +68,16 @@ section {
     border-left: 4px solid transparent;
 }
 
-.mt-right .tab-hd>li>a:hover {
+.mt-right .tab-hd>li.on>a {
     border-left: 4px solid #78b5fb;
+    color: #78b5fb;
 }
-
+.col-news{
+    display: none;
+}
+.col-news.dis{
+    display: block;
+}
 .col-news>li {
     line-height: 32px;
     padding-bottom: 3px;
@@ -192,6 +198,7 @@ section {
     left: 0;
     top: 0;
     background: #0e97dc;
+    transition: all 0.2s;
 }
 
 .adPic img {
@@ -210,6 +217,7 @@ section {
     height: 50px;
     background-color: #666;
     background: rgba(4, 0, 0, .46);
+    font-size: 0;
 }
 
 .adBtn>a {
@@ -225,6 +233,7 @@ section {
     font-size: 18px;
     color: #fff;
     line-height: 50px;
+    transition: width 0.3s linear;
 }
 
 .adBtn>a:before {
