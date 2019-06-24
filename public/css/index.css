@@ -676,6 +676,9 @@ section {
 .video-tab .tab-item a:hover {
     opacity: 1;
 }
+.video-tab .tab-item.on a{
+    opacity: 1;
+}
 
 .video-tab .tab-item .zxsp {
     background-position: -520px -100px;
@@ -900,6 +903,7 @@ section {
     margin-left: 10px;
     border-radius: 20px;
     overflow: hidden;
+    transition: width .3s;
 }
 
 .strategy-wrap>li.on {
@@ -909,11 +913,31 @@ section {
 .strategy-wrap>li:first-child {
     margin-left: 0px;
 }
+.strategy-tit-1 {
+    background-position: 0px 0px;
+}
 
 .strategy-wrap>li.on .strategy-tit-1 {
     background-position: -140px 0px;
 }
-
+.strategy-tit-2 {
+    background-position: -280px 0;
+}
+.strategy-wrap>li.on .strategy-tit-2 {
+    background-position: -420px 0;
+}
+.strategy-tit-3 {
+    background-position: -560px 0;
+}
+.strategy-wrap>li.on .strategy-tit-3 {
+    background-position: -700px 0;
+}
+.strategy-tit-4 {
+    background-position: -840px 0;
+}
+.strategy-wrap>li.on .strategy-tit-4 {
+    background-position: -980px 0;
+}
 .strategy-tit {
     display: block;
     width: 130px;
@@ -921,11 +945,6 @@ section {
     float: left;
     border-radius: 20px;
 }
-
-.strategy-tit-1 {
-    background-position: 0px 0px;
-}
-
 .strategy-swiper {
     width: 456px;
     height: 222px;
