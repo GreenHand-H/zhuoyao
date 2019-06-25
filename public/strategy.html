@@ -37,10 +37,10 @@
         <div class="tab-c comm-tab">
             <a href="" class='tab-prev prev spr text-hide'>上一个</a>
             <ul class='tab-hd'>
-                <li class='tab-item on'><a href="javascript:strategy_search('官方指引')" class='d-spr text-hide f-1-4 t-gfzy'>官方指引</a></li>
-                <li class='tab-item'><a href="javascript:strategy_search('新手指南')" class='d-spr text-hide f-1-4 t-xszy'>新手指南</a></li>
-                <li class='tab-item'><a href="javascript:strategy_search('活动玩法')" class='d-spr text-hide f-1-4 t-hdwf'>活动玩法</a></li>
-                <li class='tab-item'><a href="javascript:strategy_search('御灵攻略')" class='d-spr text-hide f-1-4 t-spgl'>视频攻略</a></li>
+                <li class='tab-item on'><a href="javascript:;" class='d-spr text-hide f-1-4 t-gfzy'>官方指引</a></li>
+                <li class='tab-item'><a href="javascript:;" class='d-spr text-hide f-1-4 t-xszy'>新手指南</a></li>
+                <li class='tab-item'><a href="javascript:;" class='d-spr text-hide f-1-4 t-hdwf'>活动玩法</a></li>
+                <li class='tab-item'><a href="javascript:;" class='d-spr text-hide f-1-4 t-spgl'>视频攻略</a></li>
             </ul>
             <a href="" class='tab-next next spr text-hide'>下一个</a>
         </div>
@@ -103,35 +103,39 @@
             <p class="foot-h">仿：H-15159883705</p>
         </div>
     </div>
+    <script src="js/jquery-1.11.3.js"></script>
     <script>
-        function strategy_search(data) {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    var result = xhr.responseText;
-                    console.log(result);
-                    var obj = JSON.parse(result);
-
-                    var col_news = document.getElementById('strategy-item');
-                    console.log(col_news);
-                    var strategy_html = '<ul class="col-news">';
-                    for (var key in obj) {
+         $(".inner-con .tab-hd a").click(function(){
+        $(this).parent().addClass("on").siblings().removeClass("on");
+        newAjax($(this).html());
+    })
+    function newAjax(state_sort){
+        $.ajax({
+            url:'/strategy/all',
+            data:{
+                state_sort
+            },
+            type:'get',
+            success:function(result){
+                console.log(result);
+                var obj=result;
+                var strategy_html = '<ul class="col-news">';
+                        for (var key in obj) {
                         obj[key].state_date = obj[key].state_date.slice(0, 10);
                         console.log(obj[key].state_date);
                         strategy_html += `<li>
 							<span class=\'time\'>${obj[key].state_date}</span>
-							<a href=\"#\">「${data}」${obj[key].state_cont}</a>
+							<a href=\"#\">「${state_sort}」${obj[key].state_cont}</a>
 						</li>`;
                     }
-                    strategy_html += '</ul>'
+                    strategy_html += '</ul>';
+                $("#strategy-item").html(strategy_html);
 
-                    col_news.innerHTML = strategy_html;
-                }
             }
-            var formdata = 'state_sort=' + data;
-            xhr.open('get', '/strategy/all?' + formdata, true);
-            xhr.send();
-        }
+        })
+    }
+    newAjax("官方指引");
+      
     </script>
 </body>
 
