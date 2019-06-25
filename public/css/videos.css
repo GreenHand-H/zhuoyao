@@ -172,8 +172,13 @@
 .grid-tab-bd {
     margin-top: 50px;
 }
+.grid-tab-bd  .col-video.dis{
+    display: block;
+}
+
 .col-video {
     width: 1260px;
+    display: none;
 }
 .col-video .video-item{
     width:285px;
