@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .kv-wrap{
+    width: 100%;
+    height: 960px;
+    position: relative;
+}
+.kv-swiper {
+    position: relative;
+    width: 1920px;
+    height: 960px;
+    top: 0;
+    left: 50%;
+    margin-left: -960px;
+    overflow: hidden;
+}
+
+.kv-wrap:before {
+    content: "";
+    display: block;
+    padding-top: 10.9%;
+    background: url(../img/kv-cover.png) no-repeat;
+    background-size: 100% auto;
+    background-position: center bottom;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    z-index: 2;
+}
+#swiper-cont{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:5760px;
+    height:960px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#swiper-cont li{
+    width:  1920px;
+    height: 960px;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+#swiper-cont li img{
+    width: 100%;
+    height: 100%;
+}
+#swiper-cont.transition{
+    transition: all 0.5s linear;
+}
+    </style>
+</head>
+<body>
+    <div class="kv-wrap">
+        <div class="kv-swiper swiper-container">
+            <ul id="swiper-cont">
+                <li class="swiper-item"><img src="../../public/img/kv1.jpg" alt=""></li>
+                <li class="swiper-item"><img src="../../public/img/kv2.jpg" alt=""></li>
+                <li class="swiper-item"><img src="../../public/img/kv1.jpg" alt=""></li>
+                <li class="swiper-item"><img src="../../public/img/kv2.jpg" alt=""></li>
+            </ul>
+        </div>
+      </div>
+      <script>
+      var i=0;
+        var swiperAll=document.getElementById("swiper-cont");
+        function moveTo(to){
+            if(to==undefined){
+                to=i+1;
+            }
+            if(i==0){
+                swiperAll.className="transition";
+            }
+            i=to;
+            swiperAll.style.marginLeft=-i*1920+"px";
+            console.log(i);
+            if(i==2){
+                i=0;
+                setTimeout(() => {
+                    swiperAll.className="";
+                      swiperAll.style.marginLeft="0px";
+                }, 500);
+              
+            }
+        }
+        setInterval(() => {
+            moveTo();
+        }, 3000);
+      </script>
+</body>
+</html>
