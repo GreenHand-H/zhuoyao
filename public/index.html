@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>官方首页</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/com.css">
     <link rel="stylesheet" href="css/index.css">
@@ -156,16 +157,16 @@
                 <span class='fairy-total'>45</span>
             </div>
             <div class='fairy-ctrl spr'>
-                <a href="" class='fairy-prev spr'></a>
-                <a href="" class='fairy-next spr'></a>
+                <a href="javascript:;" class='fairy-prev spr'></a>
+                <a href="javascript:;" class='fairy-next spr'></a>
             </div>
         </div>
         <!-- 四个图片  -->
         <div class="other-entry">
-            <a href="" class='entry-1 e-spr'></a>
-            <a href="" class='entry-2 e-spr'></a>
-            <a href="" class='entry-3 e-spr'></a>
-            <a href="" class='entry-4 e-spr'></a>
+            <a href="javascript:;" class='entry-1 e-spr'></a>
+            <a href="javascript:;" class='entry-2 e-spr'></a>
+            <a href="javascript:;" class='entry-3 e-spr'></a>
+            <a href="javascript:;" class='entry-4 e-spr'></a>
         </div>
         <!-- 活动中心-->
         <div class="part2">
@@ -577,15 +578,13 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/index.js"></script>
     <script>
-        window.onload = function () {
-            var mySwiper = new Swiper('.kv-swiper', {
+        
+        var mySwiper = new Swiper('.kv-swiper', {
                 autoplay: {
                     delay: 1000
                 },
                 loop: true // 循环模式选项
             });
-
-        }
         var tsSwiper = new Swiper('.ts-wrap', {
             navigation: {
                 nextEl: '.ts-next',

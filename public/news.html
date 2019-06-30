@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>新闻资讯</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/com.css">
     <link rel="stylesheet" href="css/news.css">
     <style>
@@ -39,14 +40,14 @@
     </div>
     <div class="inner-con inner-news-list">
         <div class="tab-c comm-tab">
-            <a href="" class='tab-prev prev spr text-hide'>上一个</a>
+            <a href="javascript:;" class='tab-prev prev spr text-hide'>上一个</a>
             <ul class='tab-hd'>
                 <li class='tab-item on'><a href="javascript:;" class='d-spr text-hide f-1-2 t-zx'>最新</a></li>
                 <li class='tab-item'><a href="javascript:;" class='d-spr text-hide f-1-2 t-xw'>新闻</a></li>
                 <li class='tab-item'><a href="javascript:;" class='d-spr text-hide f-1-2 t-gg'>公告</a></li>
                 <li class='tab-item'><a href="javascript:;" class='d-spr text-hide f-1-2 t-hd'>活动</a></li>
             </ul>
-            <a href="" class='tab-next next spr text-hide'>下一个</a>
+            <a href="javascript:;" class='tab-next next spr text-hide'>下一个</a>
         </div>
         <div class="grid-tab-bd">
             <div class="tab-panel" id='news_item'>
@@ -117,7 +118,7 @@
     })
     function newAjax(news_sort){
         $.ajax({
-            url:'/news/all',
+            url:'http://127.0.0.1:3000/news/all',
             data:{
                 news_sort
             },

@@ -1,0 +1,51 @@
+.inner-top{
+    width:1200px;
+    margin: 100px auto 0;
+}
+.tit-activity{
+    width: 481px;
+    height: 81px;
+    background-position: 0 -520px;
+}
+.inner-title{
+    float: left;
+}
+.inner-con{
+    width: 1200px;
+    margin:50px auto 100px;
+}
+.act-list{
+    width: 1230px;
+}
+.act-list>li{
+    width: 386px;
+    float: left;
+    margin-left: 21px;
+    margin-bottom: 10px;
+}
+.act-list .act-img{
+    display: block;
+    width: 386px;
+    height: 215px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.act-list .act-img img{
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    transition: all .3s linear;
+}
+.act-list .act-img img:hover{
+     transform: scale(1.03);
+}
+.act-list .act-txt{
+    display: block;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 2;
+}

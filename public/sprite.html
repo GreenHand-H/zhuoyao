@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>妖灵图鉴</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/com.css">
     <link rel="stylesheet" href="css/sprite.css">
     <link rel="stylesheet" href="css/swiper.min.css">
@@ -152,7 +153,7 @@
     function newAjax(id_name){
         console.log(id_name);
         $.ajax({
-            url:'/sprite/all',
+            url:'http://127.0.0.1:3000/sprite/all',
             data:{
                 id_name
             },
